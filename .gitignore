@@ -4,5 +4,5 @@ node_modules
 .sass-cache
 bower_components
 js/dist
-
+style.min.css
 /vendor/

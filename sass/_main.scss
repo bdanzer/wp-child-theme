@@ -16,11 +16,12 @@ span {
     font-family: 'Roboto', sans-serif !important;
 }
 
-
 /*Icon Section*/
-.danzerpress-icons-section .danzerpress-content-wrap {
-    background: white;
-    padding: 20px;
+.danzerpress-icons-section { 
+    .danzerpress-content-wrap {
+        background: white;
+        padding: 20px;
+    }
 }
 .danzerpress-icons-section .danzerpress-md-2.danzerpress-sm-2.danzerpress-xs-1 {
     display: flex;
