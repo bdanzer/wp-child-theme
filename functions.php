@@ -1,42 +1,18 @@
 <?php
-/**
- * np011 functions and definitions
- */
+use Roots\Sage\Assets;
+// enqueue styles for child theme
+// @ https://digwp.com/2016/01/include-styles-child-theme/
+function danzerpress_child_enqueue() {
+	
+	// enqueue parent styles
+	wp_enqueue_style('parent-theme', Assets\asset_path('styles/main.css'), false, null);
+	
+	// enqueue child styles
+	wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/style.css', ['parent-theme']);
 
-function np011_child_enqueue_styles() {
+    //child theme js
+	wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/js/dist/scripts.min.js', array(), null, true);
 
-    $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
-
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.min.css',
-        array( $parent_style ),
-        wp_get_theme()->get('Version')
-    );
+	//google fonts
+	wp_enqueue_style('child-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700');	
 }
-add_action( 'wp_enqueue_scripts', 'np011_child_enqueue_styles' );
-
-/*
- * Enqueue JavaScript
- */
-
-function np011_child_scripts() {
-    wp_register_script( 'custom', get_stylesheet_directory_uri() . '/js/dist/custom.min.js', array(), null, true);
-    wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/js/dist/scripts.min.js', array(), null, true);
-
-    wp_enqueue_script('custom');
-    wp_enqueue_script('scripts');
-}
-add_action( 'wp_enqueue_scripts', 'np011_child_scripts' );
-
-
-/**
- * Setup Child Theme's textdomain.
- *
- * Declare textdomain for this child theme.
- * Translations can be filed in the /languages/ directory.
- */
-function np011_child_theme_setup() {
-    load_child_theme_textdomain( 'np011-child', get_stylesheet_directory() . '/languages' );
-}
-add_action( 'after_setup_theme', 'np011_child_theme_setup' );

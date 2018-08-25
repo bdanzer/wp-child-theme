@@ -1,0 +1,11 @@
+{
+    "name": "bdanzer/danzerpress-child",
+    "description": "WordPress child theme for danzerpress2.0 theme",
+    "authors": [
+        {
+            "name": "bdanzer",
+            "email": "britt.danzer@gmail.com"
+        }
+    ],
+    "require": {}
+}
