@@ -3,7 +3,6 @@ var gulp = require( 'gulp' ),
   plumber = require( 'gulp-plumber' ),
   autoprefixer = require('gulp-autoprefixer'),
   watch = require( 'gulp-watch' ),
-  livereload = require( 'gulp-livereload' ),
   minifycss = require( 'gulp-minify-css' ),
   jshint = require( 'gulp-jshint' ),
   stylish = require( 'jshint-stylish' ),
@@ -21,7 +20,7 @@ var gulp = require( 'gulp' ),
 
 
 var config = {
-     bowerDir: './bower_components' 
+  bowerDir: './bower_components'
 }
 
 
@@ -37,23 +36,6 @@ gulp.task('bower', function() {
     .pipe(gulp.dest(config.bowerDir))
 });
 
-//fontawesome
-// gulp.task('icons', function() { 
-//     return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*') 
-//         .pipe(gulp.dest('./fonts')); 
-// });
-
-
-// Jshint outputs any kind of javascript problems you might have
-// Only checks javascript files inside /src directory
-/*
-gulp.task( 'jshint', function() {
-  return gulp.src( './js/src/*.js' )
-    .pipe( jshint() )
-    .pipe( jshint.reporter( stylish ) )
-    .pipe( jshint.reporter( 'fail' ) );
-})
-*/
 // Minify Custom JavaScript files
 gulp.task('custom-scripts', function() {
   return gulp.src('./js/src/*.js')
@@ -95,12 +77,6 @@ options.sass = {
   outputStyle: 'nested',
   precision: 10,
   imagePath: 'assets/img',
-  // include bootstrap and fontawesome to SASS folder
-   includePaths: [
-     config.bowerDir + '/mcgriddle/_sass/mcgriddle/'
-  //   config.bowerDir + '/bootstrap-sass/assets/stylesheets',
-  //   config.bowerDir + '/fontawesome/scss',
-  ],
 };
 options.autoprefixer = {
   map: true
@@ -121,7 +97,6 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.write())
     .pipe( gulp.dest( '.' ) )
     .pipe(notify({ message: 'SASS task complete' }))
-    .pipe( livereload() );
 });
 
 gulp.task('style', function() {
@@ -146,9 +121,7 @@ gulp.task('images', function() {
 });
 
 
-// Start the livereload server and watch files for change
-gulp.task( 'dev', function() {
-  livereload.listen();
+gulp.task( 'watch', function() {
 
   // don't listen to whole js folder, it'll create an infinite loop
   gulp.watch( [ './js/**/*.js', '!./js/dist/*.js' ], [ 'scripts' ] );
@@ -158,11 +131,6 @@ gulp.task( 'dev', function() {
   gulp.watch( ['css/**/*.css', 'css/*.css'], ['style'] );
 
   gulp.watch( './images/**/*', ['images']);
-
-  gulp.watch( './**/*.php' ).on( 'change', function( file ) {
-    // reload browser whenever any PHP file changes
-    livereload.changed( file );
-  } );
 } );
 
 
