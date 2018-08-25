@@ -16,13 +16,13 @@ var gulp = require( 'gulp' ),
   cleanCSS = require('gulp-clean-css'),
   concatCss = require('gulp-concat-css'),
   concat = require('gulp-concat'),
-  sourcemaps = require('gulp-sourcemaps');
+  sourcemaps = require('gulp-sourcemaps'),
+  clean = require('gulp-clean');;
 
 
 var config = {
   bowerDir: './bower_components'
 }
-
 
 // Default error handler
 var onError = function( err ) {
@@ -36,13 +36,19 @@ gulp.task('bower', function() {
     .pipe(gulp.dest(config.bowerDir))
 });
 
+gulp.task('clean', function () {
+  return gulp.src('js/dist/*', {read: false})
+      .pipe(clean());
+});
+
 // Minify Custom JavaScript files
 gulp.task('custom-scripts', function() {
   return gulp.src('./js/src/*.js')
     .pipe(sourcemaps.init())
+    .pipe(concat('main.js'))
     .pipe(uglify())
-    .pipe(concat('custom.min.js'))
     .pipe(sourcemaps.write())
+    .pipe( rename( { basename: 'main.min' } ) )
     .pipe(gulp.dest('./js/dist/'))
     .pipe(notify({ message: 'Custom JS task complete' }));
 });
@@ -56,9 +62,6 @@ gulp.task( 'scripts', ['custom-scripts'], function() {
     .pipe(sourcemaps.init())
     .pipe( include() )
     .pipe( rename( { basename: 'scripts' } ) )
-    .pipe( gulp.dest( './js/dist' ) )
-    // Normal done, time to create the minified javascript (scripts.min.js)
-    // remove the following 3 lines if you don't want it
     .pipe( uglify() )
     .pipe( rename( { suffix: '.min' } ) )
     .pipe(sourcemaps.write())
@@ -122,9 +125,8 @@ gulp.task('images', function() {
 
 
 gulp.task( 'watch', function() {
-
   // don't listen to whole js folder, it'll create an infinite loop
-  gulp.watch( [ './js/**/*.js', '!./js/dist/*.js' ], [ 'scripts' ] );
+  gulp.watch( [ './js/**/*.js', '!./js/dist/*.js' ], [ 'clean', 'scripts' ]);
 
   gulp.watch( './sass/**/*.scss', ['sass'] );
 
