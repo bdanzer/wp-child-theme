@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "NP011 Child Theme",
   "main": "gulpfile.js",
-  "author": "Vladimir Rancic",
+  "author": "Britt Danzer",
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.2.0",
