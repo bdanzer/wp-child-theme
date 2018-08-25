@@ -53,7 +53,6 @@ gulp.task('custom-scripts', function() {
     .pipe(notify({ message: 'Custom JS task complete' }));
 });
 
-
 // Concatenates all files that it finds in the manifest
 // and creates two versions: normal and minified.
 // It's dependent on the jshint task to succeed.
@@ -123,7 +122,6 @@ gulp.task('images', function() {
     .pipe(notify({ message: 'Images task complete' }));
 });
 
-
 gulp.task( 'watch', function() {
   // don't listen to whole js folder, it'll create an infinite loop
   gulp.watch( [ './js/**/*.js', '!./js/dist/*.js' ], [ 'clean', 'scripts' ]);
@@ -134,6 +132,5 @@ gulp.task( 'watch', function() {
 
   gulp.watch( './images/**/*', ['images']);
 } );
-
 
 gulp.task( 'default', ['bower', 'scripts','sass','style','images']);
