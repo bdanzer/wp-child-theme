@@ -7,5 +7,10 @@
             "email": "britt.danzer@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "DanzerpressChild\\": ["inc"]
+        }
+    }
 }
