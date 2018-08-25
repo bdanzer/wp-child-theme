@@ -1,6 +1,7 @@
 {
     "name": "bdanzer/danzerpress-2.0-child",
     "description": "WordPress child theme for danzerpress2.0 theme",
+    "type":"wordpress-theme",
     "authors": [
         {
             "name": "bdanzer",
