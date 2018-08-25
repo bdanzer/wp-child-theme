@@ -6,7 +6,8 @@ use Roots\Sage\Assets;
 class DanzerpressChild {
     public function __construct() 
     {   
-        add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 99);
+        add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 101);
+        add_filter('acf/settings/save_json', [$this, 'my_acf_json_save_point']);
     }
 
     public function enqueue_scripts() 
@@ -22,5 +23,13 @@ class DanzerpressChild {
     
         //google fonts
         wp_enqueue_style('child-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700');	
+    }
+
+    public function my_acf_json_save_point( $path ) {
+        // update path
+        $path = get_template_directory_uri() . '/acf-json';
+        
+        // return
+        return $path;
     }
 }
