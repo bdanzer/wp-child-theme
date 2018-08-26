@@ -37,26 +37,26 @@ gulp.task('bower', function() {
 });
 
 gulp.task('clean', function () {
-  return gulp.src('js/dist/*', {read: false})
+  return gulp.src('./dist/*', {read: false})
       .pipe(clean());
 });
 
 // Minify Custom JavaScript files
 gulp.task('custom-scripts', function() {
-  return gulp.src('./js/src/*.js')
+  return gulp.src('./resources/js/*.js')
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe( rename( { basename: 'main.min' } ) )
-    .pipe(gulp.dest('./js/dist/'))
+    .pipe(gulp.dest('./dist/'))
     .pipe(notify({ message: 'Custom JS task complete' }));
 });
 
 // Concatenates all files that it finds in the manifest
 // and creates two versions: normal and minified.
 // It's dependent on the jshint task to succeed.
-gulp.task( 'scripts', ['custom-scripts'], function() {
+var scripts = gulp.task( 'scripts', ['custom-scripts'], function() {
   return gulp.src( './js/manifest.js' )
     .pipe(sourcemaps.init())
     .pipe( include() )
@@ -87,7 +87,7 @@ options.autoprefixer = {
 };
 
 gulp.task('sass', function() {
-  return gulp.src('./sass/style.scss')
+  return gulp.src('./resources/sass/style.scss')
     .pipe(sourcemaps.init())
     .pipe( plumber( { errorHandler: onError } ) )
     .pipe(sass(options.sass))
@@ -97,12 +97,12 @@ gulp.task('sass', function() {
     .pipe( minifycss() )
     .pipe( rename( { suffix: '.min' } ) )
     .pipe(sourcemaps.write())
-    .pipe( gulp.dest( '.' ) )
+    .pipe( gulp.dest( './dist' ) )
     .pipe(notify({ message: 'SASS task complete' }))
 });
 
 gulp.task('style', function() {
-  return gulp.src(['css/**/*.css', 'css/*.css'])
+  return gulp.src(['./resources/css/**/*.css', 'css/*.css'])
     .pipe(concatCss("custom.css"))
     .pipe( minifycss() )
     .pipe( rename( {
@@ -110,7 +110,7 @@ gulp.task('style', function() {
       basename: 'custom',
       suffix: '.min'
     } ) )
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('./dist'))
     .pipe(notify({ message: 'custom CSS style complete' }));
 });
 
@@ -124,13 +124,13 @@ gulp.task('images', function() {
 
 gulp.task( 'watch', function() {
   // don't listen to whole js folder, it'll create an infinite loop
-  gulp.watch( [ './js/**/*.js', '!./js/dist/*.js' ], [ 'clean', 'scripts' ]);
+  gulp.watch( [ './resources/js/**/*.js', '!./js/dist/*.js' ], [ 'scripts'], scripts);
 
-  gulp.watch( './sass/**/*.scss', ['sass'] );
+  gulp.watch( './resources/sass/**/*.scss', ['sass'] );
 
-  gulp.watch( ['css/**/*.css', 'css/*.css'], ['style'] );
+  gulp.watch( ['/resources/css/**/*.css', 'css/*.css'], ['style'] );
 
-  gulp.watch( './images/**/*', ['images']);
+  gulp.watch( './resources/images/**/*', ['images']);
 } );
 
 gulp.task( 'default', ['bower', 'scripts','sass','style','images']);
