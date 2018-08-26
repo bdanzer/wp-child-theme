@@ -14,12 +14,8 @@ class DanzerpressChild {
     {
         // enqueue parent styles
         wp_enqueue_style('parent-theme', Assets\asset_path('styles/main.css'), false, null);
-        
-        if (IS_DEV) {
-            $child_link = get_stylesheet_directory_uri();
-        } else {
-            $child_link = get_stylesheet_directory();
-        }
+
+        $child_link = get_stylesheet_directory_uri();
 
         // enqueue child styles
         wp_enqueue_style('child-theme', $child_link . '/dist/style.min.css', ['parent-theme']);
