@@ -17,6 +17,8 @@ class DanzerpressChild {
 
         $child_link = get_stylesheet_directory_uri();
 
+        var_dump($child_link);
+
         // enqueue child styles
         wp_enqueue_style('child-theme', $child_link . '/dist/style.min.css', ['parent-theme']);
     
