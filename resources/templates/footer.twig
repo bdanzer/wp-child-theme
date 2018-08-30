@@ -1,0 +1,19 @@
+<div class="modal-background"></div>
+<div class="dp-modal danzerpress-flex-column danzerpress-shadow-2">
+    <div class="dp-modal-content danzerpress-box">
+        <i class="fa fa-times"></i>
+        <h1 class="danzerpress-title">Hello</h1>
+        <div class="danzerpress-content">
+            {{ function('do_shortcode', '[contact-form-7 id="117" title="Contact form 1"]') }}
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-bottom-bar">
+        <div class="danzerpress-wrap">
+            {{ fn('get_field', 'bottom_bar', 'option')|striptags('<a>') }}
+        </div>
+    </div>
+</footer>
+
+{{ function('wp_footer') }}
