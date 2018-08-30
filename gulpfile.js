@@ -17,7 +17,8 @@ var gulp = require( 'gulp' ),
   concatCss = require('gulp-concat-css'),
   concat = require('gulp-concat'),
   sourcemaps = require('gulp-sourcemaps'),
-  clean = require('gulp-clean');;
+  clean = require('gulp-clean'),
+  babel = require('gulp-babel');
 
 
 var config = {
@@ -45,6 +46,9 @@ gulp.task('clean', function () {
 gulp.task('custom-scripts', function() {
   return gulp.src('./resources/js/*.js')
     .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['env']
+    }))
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write())

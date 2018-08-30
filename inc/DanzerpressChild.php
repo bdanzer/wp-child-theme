@@ -27,7 +27,7 @@ class DanzerpressChild {
 
     public function my_acf_json_save_point( $path ) {
         // update path
-        $path = get_template_directory_uri() . '/acf-json';
+        $path = get_template_directory() . '/acf-json';
         
         // return
         return $path;
