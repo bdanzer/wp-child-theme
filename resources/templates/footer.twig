@@ -2,18 +2,21 @@
 <div class="dp-modal danzerpress-flex-column danzerpress-shadow-2">
     <div class="dp-modal-content danzerpress-box">
         <i class="fa fa-times"></i>
-        <h1 class="danzerpress-title">Hello</h1>
+        <h1 class="danzerpress-title">{{post.get_field('modal_title')}}</h1>
         <div class="danzerpress-content">
-            {{ function('do_shortcode', '[contact-form-7 id="117" title="Contact form 1"]') }}
+            {{post.get_field('modal_content')}}
         </div>
     </div>
 </div>
 <footer>
-    <div class="footer-bottom-bar">
-        <div class="danzerpress-wrap">
-            {{ fn('get_field', 'bottom_bar', 'option')|striptags('<a>') }}
+    {% if not site.hide_nav %}
+        <div class="footer-bottom-bar">
+            <div class="danzerpress-wrap">
+                {{ fn('get_field', 'bottom_bar', 'option')|striptags('<a>') }}
+            </div>
         </div>
-    </div>
+    {% endif %}
 </footer>
 
 {{ function('wp_footer') }}
+{{ fn('get_field', 'footer_scripts', 'option') }}

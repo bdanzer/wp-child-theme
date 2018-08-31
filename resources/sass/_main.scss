@@ -16,24 +16,43 @@ span {
     font-family: 'Roboto', sans-serif !important;
 }
 
+/*Nav*/
+.drawer-navbar {
+    .drawer-container {
+        .menu-cta  {
+            padding: 0 15px 4px;
+            a {
+                color: white !important;
+            }
+        }
+    }
+}
+
 /*Icon Section*/
-.danzerpress-icons-section { 
-    .danzerpress-content-wrap {
-        background: white;
-        padding: 20px;
-    }
-    .danzerpress-md-2.danzerpress-sm-2.danzerpress-xs-1 {
-        display: flex;
-        flex-direction: column;
-    }
-    .danzerpress-content-wrap {
-        flex: 1 0 auto;
-        overflow: hidden;
-    }
-    &.target-locations {
-        .hover-state {
-            &:after {
-                content: "\f063";
+div.danzerpress-icons-section { 
+    .icon-wrap {
+        .danzerpress-content-wrap {
+            background: white;
+            padding: 20px;
+        }
+        .danzerpress-md-2.danzerpress-sm-2.danzerpress-xs-1 {
+            display: flex;
+            flex-direction: column;
+        }
+        .danzerpress-content-wrap {
+            flex: 1 0 auto;
+            overflow: hidden;
+        }
+        &.target-locations {
+            .hover-state {
+                &:after {
+                    content: "\f063";
+                }
+            }
+        }
+        a:hover {
+            > .hover-state {
+                opacity: .9;
             }
         }
     }
