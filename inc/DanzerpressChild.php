@@ -7,8 +7,10 @@ class DanzerpressChild {
     public function __construct() 
     {   
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 101);
-        add_filter('acf/settings/save_json', [$this, 'my_acf_json_save_point']);
-        add_filter('acf/settings/load_json', [$this, 'my_acf_json_load_point']);
+        if (IS_DEV) {
+            add_filter('acf/settings/save_json', [$this, 'my_acf_json_save_point']);
+            add_filter('acf/settings/load_json', [$this, 'my_acf_json_load_point']);
+        } 
     }
 
     public function enqueue_scripts() 
@@ -28,7 +30,7 @@ class DanzerpressChild {
 
     public function my_acf_json_save_point( $path ) {
         // update path
-        $path = get_template_directory_uri() . '/acf-json';
+        $path = '/Users/bdanzer/wordpress-dev/themes/danzerpress/acf-json';
         
         // return
         return $path;
@@ -40,7 +42,7 @@ class DanzerpressChild {
         unset($paths[0]);
         
         // append path
-        $paths[] = get_template_directory_uri() . '/acf-json';
+        $paths[] = '/Users/bdanzer/wordpress-dev/themes/danzerpress/acf-json';
         
         // return
         return $paths;
