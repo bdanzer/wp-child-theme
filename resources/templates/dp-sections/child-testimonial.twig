@@ -4,8 +4,8 @@
     <div class="danzerpress-flex-row danzerpress-row-fix">
         {% for sub in layout.testimonial_blocks %}
             <div class="danzerpress-col-3 wow fadeInUp">
-                <div class="danzerpress-content danzerpress-box {{ dp.is_odd(iterator + 1).color }}">
-                    {{ (sub.testimonial_image) ? '<p><img src="' ~ sub.testimonial_image ~ '"></p>' : "" }}
+                <div class="danzerpress-content danzerpress-shadow-3 danzerpress-box {{ dp.is_odd(iterator + 1).color }}">
+                    {{ (sub.testimonial_image) ? '<p><img alt="' ~ Image(sub.testimonial_image).alt ~ '" src="' ~ Image(sub.testimonial_image).src ~ '"></p>' : "" }}
                     <p>"{{ sub.testimonial_content }}"</p>
                     <p class="stars">{{ dp.get_stars(sub.testimonial_stars) }}</p>
                     <p><strong>{{ sub.testimonial_name }}</strong></p>

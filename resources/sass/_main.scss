@@ -43,16 +43,16 @@ div.danzerpress-icons-section {
             flex: 1 0 auto;
             overflow: hidden;
         }
-        &.target-locations {
-            .hover-state {
-                &:after {
-                    content: "\f063";
-                }
-            }
-        }
         a:hover {
             > .hover-state {
                 opacity: .9;
+            }
+        }
+    }
+    &.target-locations {
+        .hover-state {
+            &:after {
+                content: "\f063";
             }
         }
     }
@@ -62,6 +62,10 @@ div.danzerpress-icons-section {
 .testimonial-section {
     .danzerpress-content {
         text-align: center;
+        img {
+            height: 120px;
+            width: 120px;
+        }
     }
 }
 
