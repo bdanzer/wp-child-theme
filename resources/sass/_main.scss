@@ -16,58 +16,6 @@ span {
     font-family: 'Roboto', sans-serif !important;
 }
 
-/*Nav*/
-.drawer-navbar {
-    .drawer-container {
-        .menu-cta  {
-            padding: 0 15px 4px;
-            a {
-                color: white !important;
-            }
-        }
-    }
-}
-
-/*Icon Section*/
-div.danzerpress-icons-section { 
-    .icon-wrap {
-        .danzerpress-content-wrap {
-            background: white;
-            padding: 20px;
-        }
-        .danzerpress-md-2.danzerpress-sm-2.danzerpress-xs-1 {
-            display: flex;
-            flex-direction: column;
-        }
-        .danzerpress-content-wrap {
-            flex: 1 0 auto;
-            overflow: hidden;
-        }
-        a:hover {
-            > .hover-state {
-                opacity: .9;
-            }
-        }
-    }
-    &.target-locations {
-        .hover-state {
-            &:after {
-                content: "\f063";
-            }
-        }
-    }
-}
-
-/*testimonial section*/
-.testimonial-section {
-    .danzerpress-content {
-        text-align: center;
-        img {
-            height: 120px;
-            width: 120px;
-        }
-    }
-}
 
 /*Contact Form*/
 input, textarea {
@@ -76,16 +24,4 @@ input, textarea {
     border: none;
     padding: 10px;
     font-size: 14px;
-}
-
-/*Blog Page*/
-body.blog .main-content article h2 {
-    margin: 0 0 5px;
-    font-size: 40px;
-}
-body.blog .main-content article .image-wrap {
-    padding-top: 100%;
-}
-.blog article .danzerpress-content p {
-    font-size: 17px;
 }
