@@ -25,3 +25,21 @@ input, textarea {
     padding: 10px;
     font-size: 14px;
 }
+
+header {
+    li#danzerpress-search {
+        &:hover {
+            border-color: transparent;
+        }
+        .danzerpress-search .fa {
+            &.active {
+                margin-right: 5px;
+                font-size: 15px;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            
+        }
+    }
+}
