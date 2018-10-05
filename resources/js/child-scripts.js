@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
     function addForm(obj) {
-        obj.parentNode.insertAdjacentHTML('beforeend', '<form action="https://dev1.danzerpress.com/" role="search" method="get"><input class="search-field" type="text" name="s" placeholder="Start Searching" /></form>');
+        obj.parentNode.insertAdjacentHTML('beforeend', '<form action="/" role="search" method="get"><input class="search-field" type="text" name="s" placeholder="Start Searching" /></form>');
     }
     function removeForm(obj) {
         obj.parentNode.removeChild(obj);
