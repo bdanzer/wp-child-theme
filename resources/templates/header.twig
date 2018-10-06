@@ -1,0 +1,39 @@
+{% if not options.hide_nav %}
+	<header class="drawer-navbar drawer-navbar--fixed{{ (options.get_trans_nav and not options.hide_header) ? '' : ' danzerpress-non-trans' }}" role="banner">
+        <div class="drawer-navbar-header">
+            {% include 'assets/logo.twig' %}
+            <button type="button" class="drawer-toggle drawer-hamburger">
+                <span class="drawer-hamburger-icon"></span>
+            </button>
+        </div>
+        <div class="header-space danzerpress-accent-background"></div>
+        <div class="header-space"></div>
+        <div class="drawer-container">
+			<nav class="drawer-nav" role="navigation">
+				<ul class="drawer-menu ">
+                    {% for item in menu.get_items %}
+                        <li class="{{item.classes|join(' ')}}"><a class="{{ (item.get_children) ? 'drawer-dropdown' }}" href="{{item.get_link}}">{{item.title}}</a>
+                            {% if item.get_children %}
+                                <span class="drawer-caret"></span>
+                                <ul class="drawer-dropdown-menu">
+                                    {% for child in item.get_children %}
+                                        <li><a class="drawer-dropdown-menu-item" href="{{child.get_link}}">{{child.title}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                    {{site.header_hook}}
+				</ul>
+			</nav>
+		</div>
+        <div class="header-space danzerpress-accent-background light-space"></div>
+	</header>
+{% endif %}
+ 
+{% if false == options.hide_header %}
+	<div class="danzerpress-title-area danzerpress-flex-column danzerpress-align-content danzerpress-justify-content">
+		{{dpImage(post.get_header_thumbnail, 'danzerpress-parallax')}}
+		<h1 class="danzerpress-title">{{ site.get_header_title }}</h1>
+	</div>
+{% endif %}

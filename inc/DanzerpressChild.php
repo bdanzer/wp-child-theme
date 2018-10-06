@@ -2,7 +2,6 @@
 namespace DanzerPressChild;
 
 use Roots\Sage\Assets;
-use Timber;
 
 class DanzerpressChild {
     public function __construct() 
@@ -29,8 +28,6 @@ class DanzerpressChild {
     
         //google fonts
         wp_enqueue_style('child-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700');	
-
-        //wp_localize_script($handle, $object_name, $l10n);
     }
 
     public function hook($menu) 

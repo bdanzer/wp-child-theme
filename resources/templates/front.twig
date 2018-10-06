@@ -17,10 +17,9 @@
                             button_link_left: post.link
                         })
                     }}
-                    <div class="archive">
-                        <h2 class="danzerpress-title" style="margin: 50px 0 20px; font-size: 25px;">Featured Posts</h2>
-                        {% include 'infinite_scroll.twig' with {columns: 1} %}
-                    </div>
+                    
+                    <h2 class="danzerpress-title" style="margin: 50px 0 20px; font-size: 25px;">Featured Posts</h2>
+                    {{ chunks.InfiniteScroll({posts: posts, columns: 1, template: 'child-front-content.twig', posts_per_page: posts_per_page, post_page: post_page}) }}
                 </div>
                 <div class="danzerpress-one-third">
                     {{ sidebar_primary }}
