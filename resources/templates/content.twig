@@ -1,0 +1,20 @@
+<article class="{{ 'danzerpress-col-' ~ columns }} danzerpress-flex-row wow fadeIn">
+        <div class="danzerpress-two-thirds danzerpress-fix">
+            <div class="image-wrap">
+                <a href="{{ post.link }}">
+                    {{dpImage(post.thumbnail.id)}}
+                </a>
+            </div>
+        </div>
+        <div class="danzerpress-one-third danzerpress-fix danzerpress-flex-column">
+            <div class="danzerpress-box danzerpress-white danzerpress-flex-column">
+                <header>
+                    <h2 class="entry-title"><a class="danzerpress-accent-color" href="{{ post.link }}">{{ post.title }}</a></h2>
+                </header>
+                <div class="entry-summary danzerpress-flex-column" style="flex: 1 0 auto; justify-content: space-between">
+                    <p>{{ post.preview.length(10).force.end('').read_more('') }}<p>
+                    <p><a class="danzerpress-button-modern" href="{{ post.link }}">Read More</a></p>
+                </div>
+            </div>
+        </div>
+</article>

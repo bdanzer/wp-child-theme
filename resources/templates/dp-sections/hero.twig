@@ -1,0 +1,13 @@
+{% if layout.chunk %}
+	<img class="danzerpress-abs-img" src="https://picsum.photos/1920/1026/?random">
+{% endif %}
+
+<div class="danzerpress-flex-row">
+	{% if (layout.hero_layout == 1) %}
+		{% include 'dp-sections/section-parts/hero/normal-content.twig' %}
+	{% elseif (layout.hero_layout == 2 or layout.hero_layout == 3) %}
+		{% include 'dp-sections/section-parts/hero/w-side-image-content.twig' %}
+	{% elseif (layout.background_type == 'half-and-half') %}
+		{% include 'dp-sections/section-parts/hero/half-and-half.twig' %}
+	{% endif %}
+</div>

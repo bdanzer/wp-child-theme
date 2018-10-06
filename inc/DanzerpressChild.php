@@ -2,17 +2,17 @@
 namespace DanzerPressChild;
 
 use Roots\Sage\Assets;
+use Timber;
 
 class DanzerpressChild {
     public function __construct() 
     {   
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 101);
         add_filter('danzerpress_menu_html', [$this, 'hook']);
-        add_action('wp_ajax_createHTML', [$this, 'ajax_call']);
 
         if (IS_DEV) {
-            add_filter('acf/settings/save_json', [$this, 'my_acf_json_save_point']);
-            add_filter('acf/settings/load_json', [$this, 'my_acf_json_load_point']);
+            add_filter('acf/settings/save_json', [$this, 'my_acf_json_save_point'], 99);
+            add_filter('acf/settings/load_json', [$this, 'my_acf_json_load_point'], 99);
         } 
     }
 
@@ -39,13 +39,9 @@ class DanzerpressChild {
         return $menu;
     }
 
-    public function ajax_call($response) {
-        var_dump($response);
-    }
-
     public function my_acf_json_save_point( $path ) {
         // update path
-        $path = get_template_directory() . '/acf-json';
+        $path = WP_PLUGIN_DIR . '/acf-json';
         
         // return
         return $path;
@@ -57,7 +53,7 @@ class DanzerpressChild {
         unset($paths[0]);
         
         // append path
-        $paths[] = get_template_directory()  . '/acf-json';
+        $paths[] = WP_PLUGIN_DIR  . '/acf-json';
         
         // return
         return $paths;

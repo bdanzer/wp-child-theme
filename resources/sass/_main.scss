@@ -43,3 +43,17 @@ header {
         }
     }
 }
+
+.archive {
+    @media screen and (max-width: 767px) {
+        .danzerpress-wrap {
+            width: 100%;
+        }
+    }
+}
+
+.widget {
+    background: #fff;
+    padding: 20px;
+    border-top: 8px solid black;
+}

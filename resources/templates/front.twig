@@ -1,32 +1,30 @@
 {% extends 'base.twig' %}
 
 {% block body %}
-    {{
-        chunks.Hero({
-            hero_layout: 2,
-            section_image: post.thumbnail.src,
-            section_title: post.title,
-            section_description: post.preview.length(30).force.end('').read_more(''),
-            button_text_left: 'Read More',
-            button_link_left: post.link
-        })
-    }}
-    
-    <div class="archive">
-        <div class="danzerpress-featured-content main-content">
-            <h2 class="danzerpress-title" style="margin-bottom: 40px;">Featured Posts</h2>
-            <div class="danzerpress-wrap">
-                <div class="danzerpress-flex-row">
-                    <div class="danzerpress-two-thirds">
-                        {% include 'infinite_scroll.twig' with {columns: 2} %}
-                    </div>
-                    <div class="danzerpress-one-third">
-                        <div class="danzerpress-box danzerpress-white">
-                        {{ sidebar_primary }}
-                        </div>
+    <div class="danzerpress-featured-content main-content" style="margin-top: 20px;">
+            <div class="danzerpress-flex-row">
+                <div class="danzerpress-two-thirds">
+                    {{
+                        chunks.Hero({
+                            chunk: true,
+                            classes: ['danzerpress-background-gradient'],
+                            background_type: 'image',
+                            hero_layout: 1,
+                            section_image: post.thumbnail.src,
+                            section_title: post.title,
+                            section_description: post.preview.length(20).force.end('').read_more(''),
+                            button_text_left: 'Read More',
+                            button_link_left: post.link
+                        })
+                    }}
+                    <div class="archive">
+                        <h2 class="danzerpress-title" style="margin: 50px 0 20px; font-size: 25px;">Featured Posts</h2>
+                        {% include 'infinite_scroll.twig' with {columns: 1} %}
                     </div>
                 </div>
+                <div class="danzerpress-one-third">
+                    {{ sidebar_primary }}
+                </div>
             </div>
-        </div>
     </div>
 {% endblock %}
