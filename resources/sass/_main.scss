@@ -1,4 +1,6 @@
-/*Global*/
+/**
+* Global
+**/
 h1,
 h2,
 h3,
@@ -16,8 +18,15 @@ span {
     font-family: 'Roboto', sans-serif !important;
 }
 
+body {
+    .danzerpress-button-modern {
+        border-radius: 0;
+    }
+}
 
-/*Contact Form*/
+/**
+* Contact Form
+**/
 input, textarea {
     width: 100%;
     background: #f8f9f9;
@@ -26,62 +35,101 @@ input, textarea {
     font-size: 14px;
 }
 
-header.drawer-navbar {
-    height: auto;
-    position: relative;
-    &.danzerpress-non-trans li a {
-        color: white !important;
+/**
+* Navigation
+**/
+.drawer-navbar .drawer-navbar-header {
+    background: #7367a7;
+    border: none;
+    .drawer-hamburger-icon, .drawer-hamburger-icon:after, .drawer-hamburger-icon:before {
+        background: white;
     }
-    .drawer-navbar-header {
-        position: absolute;
-        top: 30px;
-        background: transparent;
-        left: 70px;
+}
+@media screen and (max-width: 1023px) {
+    .danzerpress-featured-content {
+        .danzerpress-two-thirds {
+            padding: 0;
+        }
     }
-    .drawer-container {
-        background: black;
-        max-width: 100%;
-        height: 30px;
-        .drawer-nav {
-            height: auto;
-            width: 100%;
-            top: 0;
-            max-width: 1200px;
-            margin: auto;
-            .drawer-menu {
-                align-self: flex-end;
+}
+@media screen and (min-width: 1023px) {
+    .danzerpress-featured-content {
+        margin: 20px 0 0;
+    }
+    
+    /**
+    * Navigation
+    **/
+    body {
+        &.home,
+        &.hide-header {
+            padding: 0;
+        }
+    }
+    .admin-bar header {
+        top: 0px;
+    }
+
+    header.drawer-navbar {
+        height: auto;
+        position: relative;
+        &.danzerpress-non-trans li a {
+            color: white !important;
+        }
+        .drawer-navbar-header {
+            position: absolute;
+            top: 30px;
+            background: transparent;
+            left: 70px;
+        }
+        .drawer-container {
+            background: #231e1f;
+            max-width: 100%;
+            height: 30px;
+            .drawer-nav {
+                height: auto;
+                width: 100%;
+                top: 0;
+                max-width: 1200px;
+                margin: auto;
+                .drawer-menu {
+                    align-self: flex-end;
+                }
             }
         }
-    }
-    .header-space {
-        padding: 15px;
-        &.light-space {
-            opacity: .9;
-        }
-        &.purple {
-            background: purple;
-        }
-        &.light-purples {
-            background: rebeccapurple;
-        }
-    }
-    li#danzerpress-search {
-        &:hover {
-            border-color: transparent;
-        }
-        .danzerpress-search .fa {
-            &.active {
-                margin-right: 5px;
-                font-size: 15px;
+        .header-space {
+            padding: 15px;
+            &.light-space {
+                opacity: .9;
             }
+            &.purple {
+                background: purple;
+            }
+            &.light-purples {
+                background: rebeccapurple;
+            }
+        }
+        li#danzerpress-search {
             &:hover {
-                cursor: pointer;
+                border-color: transparent;
             }
-            
+            .danzerpress-search .fa {
+                &.active {
+                    margin-right: 5px;
+                    font-size: 15px;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+                
+            }
         }
     }
 }
 
+/**
+* Infinite Scroll
+**/
 .archive {
     @media screen and (max-width: 767px) {
         .danzerpress-wrap {
@@ -90,18 +138,39 @@ header.drawer-navbar {
     }
 }
 
-
-body {
-    &.home {
-        padding: 0;
+/**
+* Widget
+**/
+.widget {
+    .danzerpress-two-thirds {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
-    .danzerpress-button-modern {
-        border-radius: 0;
+    margin: 0px;
+    h3 {
+        margin-top: 20px;
+    }
+    h4 {
+        margin-bottom: 10px;
+    }
+    .fa {
+        font-size: 25px;
+        margin-right: 10px;
+    }
+    .textwidget {
+        background: #fff;
+        padding: 20px;
+        border-top: 8px solid #000;
     }
 }
 
-.widget {
-    background: #fff;
-    padding: 20px;
-    border-top: 8px solid black;
+/**
+* Pagination
+**/
+.danzerpress-next {
+    text-align: right;
+}
+.danzerpress-pagination {
+    margin-top: 20px;
 }

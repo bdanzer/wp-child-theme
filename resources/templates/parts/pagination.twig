@@ -1,0 +1,18 @@
+<div class="danzerpress-pagination">
+    <div class="danzerpress-flex-row danzerpress-row-fix">
+        <div class="danzerpress-prev danzerpress-col-2">
+            {% if (post.prev.link) %}
+                <a href="{{ post.prev.link }}">
+                    Previous Post
+                </a>
+            {% endif %}
+        </div>
+        <div class="danzerpress-next danzerpress-col-2">
+            {% if (post.next.link) %}
+                <a href="{{ post.next.link }}">
+                   Next Post
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>

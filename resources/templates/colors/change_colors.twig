@@ -1,0 +1,35 @@
+<style>
+    article a,
+    .fa.fa-star,
+    #commentform a,
+    .danzerpress-sidebar a,
+    .danzerpress-accent-color,
+    .widget ul a,
+    a {
+        color: {{options.get_theme_color}};
+    }
+    ::-moz-selection { 
+        background: {{options.get_theme_color}} !important; 
+        color: white;
+    }
+    ::selection { 
+        background: {{options.get_theme_color}} !important; 
+        color: white;
+    }
+    .danzerpress-accent-background {
+        background: {{options.get_theme_color}} !important;
+    }
+    a.danzerpress-button-modern,
+    #submit,
+    .danzerpress-sidebar input.search-submit,
+    .menu-cta a {
+        background: {{options.get_theme_color}};
+        border-color: {{options.get_theme_color}};
+    }
+    header.drawer-navbar.drawer-navbar--fixed .drawer-container .drawer-menu li:hover,
+    blockquote,
+    .widget .textwidget,
+    .danzerpress-accent-border {
+        border-color: {{options.get_theme_color}};
+    }
+</style>
