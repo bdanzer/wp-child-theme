@@ -22,6 +22,11 @@ body {
     .danzerpress-button-modern {
         border-radius: 0;
     }
+    &.home {
+        .main-content {
+            padding: 0;
+        }
+    }
 }
 
 /**
@@ -58,6 +63,9 @@ input, textarea {
 @media screen and (min-width: 1023px) {
     .danzerpress-featured-content {
         margin: 20px 0 0;
+        .danzerpress-wrap {
+            width: 100%;
+        }
     }
     
     /**
@@ -67,11 +75,6 @@ input, textarea {
         &.home,
         &.hide-header {
             padding: 0;
-        }
-        &.home {
-            .main-content {
-                padding: 0;
-            }
         }
     }
     .admin-bar header {
@@ -140,9 +143,7 @@ input, textarea {
 **/
 .archive {
     @media screen and (max-width: 767px) {
-        .danzerpress-wrap {
-            width: 100%;
-        }
+        
     }
 }
 

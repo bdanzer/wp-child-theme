@@ -1,0 +1,10 @@
+<footer>
+    <div class="footer-bottom-bar">
+        <div class="danzerpress-wrap">
+            {{ fn('get_field', 'bottom_bar', 'option')|striptags('<a>') }}
+        </div>
+    </div>
+</footer>
+
+{{ function('wp_footer') }}
+{{ fn('get_field', 'footer_scripts', 'option') }}
