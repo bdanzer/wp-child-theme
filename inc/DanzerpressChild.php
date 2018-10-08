@@ -8,11 +8,17 @@ class DanzerpressChild {
     {   
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 101);
         add_filter('danzerpress_menu_html', [$this, 'hook']);
+        add_filter('ajax_template', [$this, 'ajax_template']);
 
         if (IS_DEV) {
             add_filter('acf/settings/save_json', [$this, 'my_acf_json_save_point'], 99);
             add_filter('acf/settings/load_json', [$this, 'my_acf_json_load_point'], 99);
         } 
+    }
+
+    public function ajax_template($template) 
+    {
+        return 'child-front-content.twig';
     }
 
     public function enqueue_scripts() 

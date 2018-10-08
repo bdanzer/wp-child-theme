@@ -38,6 +38,9 @@ input, textarea {
 /**
 * Navigation
 **/
+.drawer-navbar.danzerpress-non-trans .light-logo {
+    display: block;
+}
 .drawer-navbar .drawer-navbar-header {
     background: #7367a7;
     border: none;
@@ -64,6 +67,11 @@ input, textarea {
         &.home,
         &.hide-header {
             padding: 0;
+        }
+        &.home {
+            .main-content {
+                padding: 0;
+            }
         }
     }
     .admin-bar header {

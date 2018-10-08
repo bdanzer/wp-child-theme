@@ -1,8 +1,0 @@
-{% if false == layout.chunk %}
-    {% set classes = section[layout.acf_fc_layout].section_class|merge([dp.custom_css(layout.custom_css_class), dp.is_odd(iterator).section_type]) %}
-{% else %}
-    {% set classes = layout.classes %}
-{% endif %}
-
-{{ dp.header_builder(layout.background_type,layout.section_background, layout.background_color, iterator, classes) }}
-<div class="danzerpress-wrap">
