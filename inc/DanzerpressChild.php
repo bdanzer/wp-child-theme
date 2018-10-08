@@ -16,13 +16,13 @@ class DanzerpressChild {
     public function enqueue_scripts() 
     {
         // enqueue parent styles
-        wp_enqueue_style('parent-theme', Assets\asset_path('styles/main.css'), false, null);
+        wp_enqueue_style('parent-theme', Assets\asset_path('styles/main.css'), false, DP_CACHE_BUFFER);
 
         // enqueue child styles
-        wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/dist/style.min.css', ['parent-theme']);
+        wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/dist/style.min.css', ['parent-theme'], DP_CACHE_BUFFER);
     
         //child theme js
-        wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/dist/main.min.js', array(), null, true);
+        wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/dist/main.min.js', array(), DP_CACHE_BUFFER, true);
     
         //google fonts
         wp_enqueue_style('child-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700');	
@@ -30,7 +30,7 @@ class DanzerpressChild {
 
     public function my_acf_json_save_point( $path ) {
         // update path
-        $path = '/Users/bdanzer/wordpress-dev/themes/danzerpress/acf-json';
+        $path = WP_PLUGIN_DIR . '/acf-json';
         
         // return
         return $path;
@@ -42,7 +42,7 @@ class DanzerpressChild {
         unset($paths[0]);
         
         // append path
-        $paths[] = '/Users/bdanzer/wordpress-dev/themes/danzerpress/acf-json';
+        $paths[] = WP_PLUGIN_DIR . '/acf-json';
         
         // return
         return $paths;
