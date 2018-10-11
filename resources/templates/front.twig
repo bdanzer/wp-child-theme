@@ -1,22 +1,30 @@
 {% extends 'base.twig' %}
 
 {% block body %}
+
+
     <div class="danzerpress-featured-content main-content">
             <div class="danzerpress-flex-row">
                 <div class="danzerpress-two-thirds">
-                    {{
-                        chunks.Hero({
-                            chunk: true,
-                            classes: 'danzerpress-background-gradient background-type-image',
-                            background_type: 'image',
-                            hero_layout: 1,
-                            section_image: post.thumbnail.src,
-                            section_title: post.title,
-                            section_description: post.preview.length(20).force.end('').read_more(''),
-                            button_text_left: 'Read More',
-                            button_link_left: post.link
-                        })
-                    }}
+                    <div class="danzerpress-slider-wrap">
+                        <div class="danzerpress-slider">
+                        {% for sliderPost in slider %}
+                            {{
+                                chunks.Hero({
+                                    chunk: true,
+                                    classes: 'danzerpress-background-gradient background-type-image',
+                                    background_type: 'image',
+                                    hero_layout: 1,
+                                    section_image: sliderPost.thumbnail.src,
+                                    section_title: sliderPost.title,
+                                    section_description: sliderPost.preview.length(20).force.end('').read_more(''),
+                                    button_text_left: 'Read More',
+                                    button_link_left: sliderPost.link
+                                })
+                            }}
+                        {% endfor %}
+                        </div>
+                    </div>
                     
                     <div class="danzerpress-wrap">
                         <h2 class="danzerpress-title" style="margin: 50px 0 20px; font-size: 25px;">Featured Posts</h2>
