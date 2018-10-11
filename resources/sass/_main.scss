@@ -88,11 +88,16 @@ input, textarea {
         &.danzerpress-non-trans li a {
             color: white !important;
         }
-        .drawer-navbar-header {
-            position: absolute;
-            top: 35px;
-            background: 0 0;
-            left: 70px;
+        .danzerpress-header-wrap {
+            max-width: 1540px;
+            margin: auto;
+            position: relative;
+            .drawer-navbar-header {
+                position: absolute;
+                top: 35px;
+                background: 0 0;
+                left: 70px;
+            }
         }
         .drawer-container {
             background: #231e1f;

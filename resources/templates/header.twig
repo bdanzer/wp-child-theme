@@ -1,10 +1,12 @@
 {% if not options.hide_nav %}
 	<header class="drawer-navbar drawer-navbar--fixed{{ (options.get_trans_nav and not options.hide_header) ? '' : ' danzerpress-non-trans' }}" role="banner">
+        <div class="danzerpress-header-wrap">
         <div class="drawer-navbar-header">
             {% include 'assets/logo.twig' %}
             <button type="button" class="drawer-toggle drawer-hamburger">
                 <span class="drawer-hamburger-icon"></span>
             </button>
+        </div>
         </div>
         <div class="header-space danzerpress-accent-background"></div>
         <div class="header-space"></div>
