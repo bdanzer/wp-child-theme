@@ -29,20 +29,30 @@ class DanzerpressChild {
     }
 
     public function my_acf_json_save_point( $path ) {
-        // update path
-        $path = '/Users/bdanzer/wordpress-dev/themes/danzerpress/acf-json';
+        $path = get_template_directory() . '/acf-json';
+
+        if (is_link($path)) {
+            $path = readlink($path);
+            var_dump($path);
+            die();
+        }
         
         // return
         return $path;
     }
 
     public function my_acf_json_load_point( $paths ) {
-        
         // remove original path (optional)
         unset($paths[0]);
+
+        $path = get_template_directory();
+
+        if (is_link($path)) {
+            $path = readlink($path);
+        }
         
         // append path
-        $paths[] = '/Users/bdanzer/wordpress-dev/themes/danzerpress/acf-json';
+        $paths[] = $path . '/acf-json';
         
         // return
         return $paths;

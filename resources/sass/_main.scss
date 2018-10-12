@@ -85,6 +85,14 @@ body.blog .main-content article h2 {
 }
 body.blog .main-content article .image-wrap {
     padding-top: 100%;
+    position: relative;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
 }
 .blog article .danzerpress-content p {
     font-size: 17px;
