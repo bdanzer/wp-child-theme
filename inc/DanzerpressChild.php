@@ -1,5 +1,5 @@
 <?php
-namespace DanzerPressChild;
+namespace DanzerpressChild;
 
 use Roots\Sage\Assets;
 
