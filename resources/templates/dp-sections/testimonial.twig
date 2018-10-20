@@ -3,12 +3,16 @@
     <p style="text-align:center;">{{ layout.section_description }}</p>
     <div class="danzerpress-flex-row danzerpress-row-fix">
         {% for sub in layout.testimonial_blocks %}
-            <div class="danzerpress-col-3 wow fadeInUp">
+            <div class="testimonial-col danzerpress-col-3 wow fadeInUp">
                 <div class="danzerpress-content danzerpress-shadow-3 danzerpress-box danzerpress-background">
-                    {{ (sub.testimonial_image) ? '<p><img alt="' ~ Image(sub.testimonial_image).alt ~ '" src="' ~ Image(sub.testimonial_image).src ~ '"></p>' : "" }}
-                    <p>"{{ sub.testimonial_content }}"</p>
-                    <p class="stars">{{ dp.get_stars(sub.testimonial_stars) }}</p>
-                    <p><strong>{{ sub.testimonial_name }}</strong></p>
+                    <div class="inner-content-wrap">
+                        {{ (sub.testimonial_image) ? '<p><img alt="' ~ Image(sub.testimonial_image).alt ~ '" src="' ~ Image(sub.testimonial_image).src ~ '"></p>' : "" }}
+                        <p>"{{ sub.testimonial_content }}"</p>
+                    </div>
+                    <div>
+                        <p class="stars">{{ dp.get_stars(sub.testimonial_stars) }}</p>
+                        <p><strong>{{ sub.testimonial_name }}</strong></p>
+                    </div>
                 </div>
             </div>
         {% endfor %}

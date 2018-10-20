@@ -62,6 +62,12 @@ div.danzerpress-icons-section {
 .testimonial-section {
     .danzerpress-content {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .inner-content-wrap {
+            margin-bottom: 20px;
+        }
         img {
             height: 120px;
             width: 120px;
