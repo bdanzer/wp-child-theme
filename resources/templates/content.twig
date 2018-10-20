@@ -9,7 +9,7 @@
             </div>
             <div class="danzerpress-one-third">
                 <div class="image-wrap">
-                    <a href="{{ post.link }}"><img src="{{ post.thumbnail.src|resize(500) }}"></a>
+                    <a href="{{ post.link }}">{{ dpImage(post.thumbnail.id) }}</a>
                 </div>
             </div>
         </div>

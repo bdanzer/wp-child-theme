@@ -5,9 +5,7 @@
         <div class="danzerpress-wrap">
             <div class="danzerpress-flex-row">
                 <div class="danzerpress-two-thirds danzerpress-col-center">
-                {% for post in posts %}
-                    {% include "templates/content.twig" with {post: post}  %}
-                {% endfor %}
+                {{ chunks.InfiniteScroll({posts: posts, posts_per_page: 10, post_page: 2}) }}
                 </div>
             </div>
         </div>
