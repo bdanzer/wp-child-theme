@@ -1,0 +1,42 @@
+.attorney-block .danzerpress-img-wrap img {
+    position:static;
+      width:95%;
+    max-width:400px;
+     display:flex;
+ align-items: center;
+ justify-content:center;
+ height: auto;
+}
+
+.attorney-block .danzerpress-col-1 {
+  display: flex;
+}
+
+.attorney-block .danzerpress-content.danzerpress-box.danzerpress-background {
+ margin-left: 0;
+}
+
+.attorney-block .danzerpress-img-wrap {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ padding-top: 0;
+}
+
+div.danzerpress-icons-section .icon-wrap a:hover>.hover-state {
+ opacity: .4;
+}
+
+.danzerpress-icons-section .hover-state:after {
+ content: "";
+ font-size: 35px;
+ color: #fff;
+}
+
+.icons-default.icon-wrap.danzerpress-col-3.danzerpress-md-2.danzerpress-sm-2.danzerpress-xs-1 {
+ background-color: white;
+}
+
+.danzerpress-wrap {
+ color: white;
+}
