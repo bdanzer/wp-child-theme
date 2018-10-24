@@ -31,10 +31,9 @@ class DanzerpressChild {
     public function my_acf_json_save_point( $path ) {
         $path = get_template_directory() . '/acf-json';
 
+
         if (is_link($path)) {
             $path = readlink($path);
-            var_dump($path);
-            die();
         }
         
         // return
@@ -46,14 +45,15 @@ class DanzerpressChild {
         unset($paths[0]);
 
         $path = get_template_directory();
-
+        // var_dump($path);
+        // die();
         if (is_link($path)) {
             $path = readlink($path);
         }
         
         // append path
         $paths[] = $path . '/acf-json';
-        
+            
         // return
         return $paths;
         

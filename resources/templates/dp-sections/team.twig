@@ -1,0 +1,17 @@
+<h2 class="danzerpress-title" style="margin-bottom: 40px;">{{ layout.section_title }}</h2>
+<div class="danzerpress-four-fifths danzerpress-col-center">
+    <p style="text-align:center;">{{ layout.section_description }}</p>
+    <div class="danzerpress-flex-row danzerpress-row-fix">
+        {% for sub in layout.team_blocks %}
+            <div class="danzerpress-col-1">
+                <div class="danzerpress-img-wrap">
+                    {{ (sub.team_image) ? '<img src="' ~ sub.team_image ~ '">' : "" }}
+                </div>
+                <div class="danzerpress-content danzerpress-box danzerpress-background">
+                    <p>"{{ sub.team_content }}"</p>
+                    <p><strong>{{ sub.team_name }}</strong></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
