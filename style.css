@@ -9,4 +9,28 @@
 */
 
 
-/* test */
+/* Home Page Padding */
+
+.home-locations {
+    padding: 50px 0 80px 0;
+}
+
+.home-icons {
+	padding: 45px 70px; 
+}
+
+.home-testimonials {
+		padding: 45px 0 70px 0;
+}
+
+.home-injuries {
+    padding: 55px 0 70px 0;
+}
+
+.home-injuries img {
+		width: auto;
+}
+
+.home-accidents {
+	padding: 55px 70px;
+}
