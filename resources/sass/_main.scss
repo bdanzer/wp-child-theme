@@ -117,10 +117,22 @@ body.blog .main-content article .image-wrap {
 
 .home-locations {
     padding: 50px 0 80px 0;
+    background-color: white;
 }
+
+
+.home-locations.danzerpress-odd .danzerpress-background {
+    background: #efefef;
+}
+
 
 .home-icons {
 	padding: 45px 70px; 
+	background-color: #efefef;
+}
+
+.home-icons .danzerpress-box {
+    background-color: white;
 }
 
 .home-testimonials {
