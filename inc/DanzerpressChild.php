@@ -29,8 +29,7 @@ class DanzerpressChild {
     }
 
     public function my_acf_json_save_point( $path ) {
-        // update path
-        $path = '/Users/bdanzer/wordpress-dev/themes/danzerpress/acf-json';
+        $path = get_template_directory() . '/acf-json';
         
         // return
         return $path;
@@ -40,6 +39,8 @@ class DanzerpressChild {
         
         // remove original path (optional)
         unset($paths[0]);
+
+        $path = get_template_directory();
         
         // append path
         $paths[] = '/Users/bdanzer/wordpress-dev/themes/danzerpress/acf-json';
