@@ -159,3 +159,20 @@ body.blog .main-content article .image-wrap {
 	}
 }
 
+/* Making the header size bigger */
+/* Don't have edit access to the parent theme CSS, so writing CSS here */
+
+@media (min-width: 64em) {
+    header.drawer-navbar {
+        height: 5.75rem;
+        .drawer-navbar-header {
+            height: 5.75rem;
+        }   
+        .drawer-nav {
+            height: 5.75rem;
+        }
+    }
+    img.dark-logo.danzerpress-logo {
+         max-height: 90px;
+    }
+}
