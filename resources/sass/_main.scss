@@ -176,3 +176,9 @@ body.blog .main-content article .image-wrap {
          max-height: 90px;
     }
 }
+
+@media (min-width:1000px) {
+    .drawer-navbar.drawer-navbar--fixed .drawer-container .drawer-menu li {
+        font-size: 16px!important;
+    }
+}
