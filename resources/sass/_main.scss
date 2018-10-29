@@ -182,3 +182,15 @@ body.blog .main-content article .image-wrap {
         font-size: 16px!important;
     }
 }
+
+/* Fixing the icon hover */
+
+div.danzerpress-icons-section .icon-wrap a:hover>.hover-state {
+ opacity: .4;
+}
+
+.danzerpress-icons-section .hover-state:after {
+ content: "";
+ font-size: 35px;
+ color: #fff;
+}
