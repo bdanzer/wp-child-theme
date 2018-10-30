@@ -195,9 +195,31 @@ div.danzerpress-icons-section .icon-wrap a:hover>.hover-state {
  color: #fff;
  }
 
+ /* Making the icon boxes bigger as desired */
+
+.bigger-icon-boxes-and-text {
+    .danzerpress-box {
+        padding: 60px 20px;
+    }
+    h4 {
+        font-size: 23px;
+    }
+}
+
+
  /* Buttons */
 
  .danzerpress-button-modern:hover {
-    background-color: #245fb2;
+    background-color: #245fb2!important;
  }
 
+ /* Making the attorney image size smaller */
+
+ .bottom-atty-image {
+    .danzerpress-img-wrap {
+        text-align:center;
+        img {
+            width: auto;
+        }
+    }
+ }

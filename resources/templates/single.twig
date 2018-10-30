@@ -1,0 +1,31 @@
+{% extends "templates/base.twig" %}
+
+{% block content %}
+<h1>Test</h1>
+    <div class="danzerpress-two-thirds danzerpress-col-center">
+        <article {{ function('post_class') }}>
+            <header>
+                {% if post.get_field('hide_featured_image') == false %}
+                    <div class="danzerpress-image-wrap">
+                        {{dpImage(post.thumbnail.id)}}
+                    </div>
+                {% endif %}
+                <h1 class="entry-title">{{ post.title }}</h1>
+                <div class="entry-meta">
+                    <p>Posted on: {{ post.date }}</p>
+                    <p>By: <a href="{{post.author.link}}">{{ post.author.name|capitalize }}</a></p>
+                    <p>
+                        Categories:
+                        {% for cat in post.categories %}
+                            <a href="/category/{{cat.slug}}">{{cat.name}}</a>{{(false == loop.last) ? ', ' : ''}}
+                        {% endfor %}
+                    </p>
+                </div>
+            </header>
+            <div class="entry-content">
+                {{ post.content }}
+            </div>
+        </article>
+        {% include 'parts/pagination.twig' %}
+    </div>
+{% endblock %}
