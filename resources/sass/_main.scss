@@ -223,3 +223,21 @@ div.danzerpress-icons-section .icon-wrap a:hover>.hover-state {
         }
     }
  }
+
+ /* Styles for single blogs */
+
+
+
+/* Styles for single blogs */
+.single {
+	p {
+    	color: black;
+	}
+	.entry-content a {
+		text-decoration: underline;
+	}
+    .main-content .danzerpress-pagination .entry-content img,
+    .main-content article .entry-content img {
+        width: auto;
+    }
+}
