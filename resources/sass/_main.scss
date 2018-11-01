@@ -183,6 +183,10 @@ body.blog .main-content article .image-wrap {
     }
 } 
 
+.drawer-dropdown-menu-item {
+    font-size: 13px!important;
+}
+
 /* Fixing the icon hover */
 
 div.danzerpress-icons-section .icon-wrap a:hover>.hover-state {
@@ -215,15 +219,23 @@ div.danzerpress-icons-section .icon-wrap a:hover>.hover-state {
 
  /* Making the attorney image size smaller */
 
- .bottom-atty-image {
-    .danzerpress-img-wrap {
-        text-align:center;
-        img {
-            width: auto;
+ @media (min-width: 768px) {
+     .bottom-atty-image {
+        .danzerpress-col-1 {
+            display: flex;
+            align-items: center;
+            .danzerpress-box {
+                flex: unset;
+            }
         }
-    }
+        .danzerpress-img-wrap {
+            text-align:center;
+            img {
+                width: auto;
+            }
+        }
+     }
  }
-
  /* Styles for single blogs */
 
 
