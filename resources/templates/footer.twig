@@ -12,7 +12,7 @@
     {% if not site.hide_nav %}
         <div class="footer-bottom-bar">
             <div class="danzerpress-wrap">
-                {{ fn('get_field', 'bottom_bar', 'option')|striptags('<a>') }}
+                {{ fn('get_field', 'bottom_bar', 'option')|striptags('<a><div>') }}
             </div>
         </div>
     {% endif %}
