@@ -248,3 +248,14 @@ div.danzerpress-icons-section .icon-wrap a:hover>.hover-state {
         width: auto;
     }
 }
+
+/* Utility Classes */
+/* These are designed to be reusable classes for accomplishing various design things */
+
+.add-padding-to-h1 h1 {
+    padding-bottom: 25px;
+}
+
+.add-margin-top-to-button .danzerpress-button-wrap {
+    margin-top: 25px;
+}
