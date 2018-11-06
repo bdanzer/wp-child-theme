@@ -156,6 +156,12 @@ body.blog .main-content article .image-wrap {
     }
 }
 
+@media (max-width: 500px) {
+    .home-accidents .danzerpress-content-box {
+        min-height: 36px;
+    }
+}
+
 .home-locations .danzerpress-box.danzerpress-background {
     display: flex;
     align-items: center;
