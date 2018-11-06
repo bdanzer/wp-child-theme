@@ -129,6 +129,9 @@ body.blog .main-content article .image-wrap {
 .home-icons.danzerpress-even {
 	padding: 45px 70px; 
 	background-color: #efefef;
+    @media (max-width: 767px) {
+        padding: 45px 0;
+    }
 }
 
 .home-icons.danzerpress-even .danzerpress-box {
@@ -149,6 +152,9 @@ body.blog .main-content article .image-wrap {
 
 .home-accidents {
 	padding: 55px 70px;
+    @media (max-width: 767px) {
+        padding: 55px 0;
+    }
 }
 
 .home-locations .danzerpress-box.danzerpress-background {
