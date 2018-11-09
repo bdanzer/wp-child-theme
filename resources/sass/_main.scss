@@ -271,3 +271,18 @@ div.danzerpress-icons-section .icon-wrap a:hover>.hover-state {
 .add-margin-top-to-button .danzerpress-button-wrap {
     margin-top: 25px;
 }
+
+
+/*media*/
+@media screen and (max-width: 1024px) {
+    .drawer-open {
+        ul.drawer-dropdown-menu,
+        a.drawer-dropdown {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+        .drawer-navbar.drawer-navbar--fixed .drawer-container .drawer-menu li {
+            flex-direction: column;
+        }
+    }
+}

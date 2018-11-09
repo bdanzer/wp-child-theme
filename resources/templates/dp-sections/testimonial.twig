@@ -6,7 +6,7 @@
             <div class="testimonial-col danzerpress-col-3 wow fadeInUp">
                 <div class="danzerpress-content danzerpress-shadow-3 danzerpress-box danzerpress-background">
                     <div class="inner-content-wrap">
-                        {{ (sub.testimonial_image) ? '<p><img alt="' ~ Image(sub.testimonial_image).alt ~ '" src="' ~ Image(sub.testimonial_image).src ~ '"></p>' : "" }}
+                        {{ (sub.testimonial_image) ? '<p>' ~ dpImage(sub.testimonial_image) ~ '</p>' : "" }}
                         <p>"{{ sub.testimonial_content }}"</p>
                     </div>
                     <div>
