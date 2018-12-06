@@ -5,4 +5,6 @@ if ( file_exists( $autoload_path ) ) {
     require_once( $autoload_path );
 }
 
-new DanzerpressChild\DanzerpressChild();
+if (class_exists('Timber')) {
+    new DanzerpressChild\DanzerpressChild();
+}
