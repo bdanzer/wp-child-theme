@@ -1,0 +1,47 @@
+.single .main-content {
+    background: #e7e7e7;
+}
+
+.learndash {
+    overflow: hidden;
+    margin-bottom: 60px;
+    ul {
+        li {
+            color: grey;
+            padding: 7px 0;
+        }
+    }
+    .learndash_content {
+        margin-bottom: 20px;
+    }
+    #learndash_course_materials,
+    #learndash_quizzes {
+        margin-bottom: 20px;
+    }
+    #learndash_lessons,
+    #lesson_heading,
+    #quiz_heading {
+        border-radius: 0px;
+    }
+
+
+    .wpProQuiz_content {
+        background: white;
+        padding: 20px;
+        .wpProQuiz_questionListItem input {
+            width: auto;
+            margin-right: 9px; 
+        }
+    }
+    .wpProQuiz_quiz {
+        background: white;
+        padding: 20px;
+    }
+    input[name="restartQuiz"] {
+        margin-bottom: 20px;
+    }
+
+    dd.course_progress div.course_progress_blue {
+        background-color: #00c6f0;
+    }
+}

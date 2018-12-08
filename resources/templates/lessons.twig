@@ -1,0 +1,16 @@
+{% extends "templates/base.twig" %}
+
+{% block body %}
+    <div class="main-content">
+        <div class="danzerpress-wrap">
+            <div class="danzerpress-two-thirds danzerpress-col-center">
+                <article {{ function('post_class') }}>
+                    <h1 class="entry-title">{{ post.title }}</h1>
+                    <div class="entry-content">
+                        {{ post.content }}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+{% endblock %}

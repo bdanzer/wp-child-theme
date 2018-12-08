@@ -1,5 +1,5 @@
 <?php
-namespace DanzerpressChild;
+namespace DanzerPressChild;
 
 use Roots\Sage\Assets;
 
@@ -7,6 +7,8 @@ class DanzerpressChild {
     public function __construct() 
     {   
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 101);
+        add_filter('acf/settings/save_json', [$this, 'my_acf_json_save_point']);
+        add_filter('acf/settings/load_json', [$this, 'my_acf_json_load_point']);
     }
 
     public function enqueue_scripts() 
@@ -22,5 +24,27 @@ class DanzerpressChild {
     
         //google fonts
         wp_enqueue_style('child-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700');	
+    }
+
+    public function my_acf_json_save_point( $path ) {
+        $path = get_template_directory() . '/acf-json';
+        
+        // return
+        return $path;
+    }
+
+    public function my_acf_json_load_point( $paths ) {
+        
+        // remove original path (optional)
+        unset($paths[0]);
+
+        $path = get_template_directory();
+        
+        // append path
+        $paths[] = $path . '/acf-json';
+        
+        // return
+        return $paths;
+        
     }
 }
