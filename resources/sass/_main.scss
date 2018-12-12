@@ -32,6 +32,18 @@ span {
     }
 }
 
+/*Single Page*/
+.single .main-content {
+    padding: 0px;
+    .gtdp-course-progress {
+        background: white;
+        padding: 20px;
+        dd.course_progress {
+            max-width: 600px;
+        }
+    }
+}
+
 /*Icon Section*/
 div.danzerpress-icons-section { 
     .icon-wrap {
