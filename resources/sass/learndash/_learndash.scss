@@ -24,13 +24,35 @@
         border-radius: 0px;
     }
 
-
+    /*Quiz*/
     .wpProQuiz_content {
         background: white;
         padding: 20px;
-        .wpProQuiz_questionListItem input {
-            width: auto;
-            margin-right: 9px; 
+        p[cass="wpProQuiz_clear"] {
+            display: none;
+        }
+        .wpProQuiz_sending {
+            text-align: center;
+            p {
+                display: none;
+            }
+        }
+        .wpProQuiz_header {
+            font-size: 25px;
+        }
+        .wpProQuiz_questionList {
+            background: rgba(231, 231, 231, 0.7);
+            border: none;
+        }
+        .wpProQuiz_listItem {
+            margin-bottom: 20px;
+            input {
+                width: auto;
+                margin-right: 9px; 
+            }
+        }
+        .wpProQuiz_results {
+            text-align: center;
         }
     }
     .wpProQuiz_quiz {
