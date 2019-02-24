@@ -1,19 +1,21 @@
 /*Global*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.danzerpress-button-modern,
-.danzerpress-button-modern-transparent {
-    font-family: 'Montserrat', sans-serif !important;
-}
-p,
-li,
-a,
-span {
-    font-family: 'Roboto', sans-serif !important;
+html {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .danzerpress-button-modern,
+    .danzerpress-button-modern-transparent {
+        font-family: 'Montserrat', sans-serif;
+    }
+    p,
+    li,
+    a,
+    span {
+        font-family: 'Roboto', sans-serif;
+    }
 }
 
 /*Nav*/
