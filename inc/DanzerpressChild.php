@@ -14,13 +14,13 @@ class DanzerpressChild {
     public function enqueue_scripts() 
     {
         // enqueue parent styles
-        wp_enqueue_style('parent-theme', Assets\asset_path('styles/main.css'), false, null);
+        wp_enqueue_style('parent-theme', Assets\asset_path('styles/main.css'), false, \Danzerpress\DP_Theme::get_ver());
 
         // enqueue child styles
-        wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/dist/style.min.css', ['parent-theme']);
+        wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/dist/style.min.css', ['parent-theme'], self::get_ver());
     
         //child theme js
-        wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/dist/main.min.js', array(), null, true);
+        wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/dist/main.min.js', array(), self::get_ver(), true);
     
         //google fonts
         wp_enqueue_style('child-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700');	
@@ -44,7 +44,11 @@ class DanzerpressChild {
         $paths[] = $path;
         
         // return
-        return $paths;
-        
+        return $paths; 
+    }
+
+    public static function get_ver() 
+    {
+        return wp_get_theme()->get('Version');
     }
 }
