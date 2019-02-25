@@ -6,4 +6,3 @@ bower_components
 js/dist
 js/src
 !js/src/child-scripts.js
-style.min.css
