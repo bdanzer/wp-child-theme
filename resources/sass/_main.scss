@@ -86,6 +86,34 @@ input, textarea {
     }
 }
 
+header {
+    height: auto !important;
+    .banner {
+        background: #262c33;
+        text-align: right;
+        color: #fff;
+        padding: 3px 0;
+        .banner-wrap {
+            padding-right: 15px;
+            max-width: 1400px;
+            margin: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .certified,
+    .divider {
+        display: none;
+    }
+    .banner-wrap {
+        text-align: center;
+    }
+    .drawer-hamburger {
+        top: 24px;
+    }
+}
+
 .danzerpress-section {
     &.danzerpress-icons-section .hover-state:after {
         content: "\f078";

@@ -1,0 +1,28 @@
+{% if not options.hide_nav %}
+	<header class="drawer-navbar drawer-navbar--fixed" role="banner">
+		<div class="banner">
+			<div class="banner-wrap">
+				<span class="certified">WBE/SBE/DBE/UDBE Certified</span>
+				<span class="divider" style="margin:0 15px;">|</span> <i style="margin-right: 8px;" class="fa fa-phone"></i>(310) 477-2900
+			</div>
+		</div>
+		<div class="drawer-container">
+			<div class="drawer-navbar-header">
+				{% include 'assets/logo.twig' %}
+				<button type="button" class="drawer-toggle drawer-hamburger">
+					<span class="drawer-hamburger-icon"></span>
+				</button>
+			</div>
+			{% include 'menu/menu.twig' %}
+		</div>
+	</header>
+{% endif %}
+
+{% if false == options.hide_header and false == options.is_section_home %}
+	<div class="danzerpress-title-area danzerpress-flex-column danzerpress-align-content danzerpress-justify-content">
+		{{dpImage(post.get_header_thumbnail, 'danzerpress-parallax')}}
+		<div class="danzerpress-wrap">
+			<h1 class="danzerpress-title">{{ site.get_header_title }}</h1>
+		</div>
+	</div>
+{% endif %}
