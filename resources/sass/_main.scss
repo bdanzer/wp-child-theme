@@ -85,3 +85,17 @@ input, textarea {
         fill: white;
     }
 }
+
+.danzerpress-section {
+    .danzerpress-icons-section .hover-state:after {
+        content: "\f078";
+    }
+}
+
+.home {
+    .danzerpress-section {
+        .danzerpress-icons-section .hover-state:after {
+            content: "\f0c1";
+        }
+    }
+}
