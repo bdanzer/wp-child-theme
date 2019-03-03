@@ -20,11 +20,18 @@ html {
 
 /*Nav*/
 .drawer-navbar {
-    .drawer-container {
-        .menu-cta  {
-            padding: 0 15px 4px;
-            a {
-                color: white !important;
+    &.drawer-navbar--fixed {
+        .drawer-container {
+            .drawer-menu {
+                li {
+                    padding: 0 10px 4px !important;
+                }
+            }
+            .menu-cta  {
+                padding: 0 15px 4px;
+                a {
+                    color: white !important;
+                }
             }
         }
     }
