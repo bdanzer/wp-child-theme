@@ -9,8 +9,8 @@ class DanzerpressChild {
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts'], 101);
         add_filter('acf/settings/save_json', [$this, 'my_acf_json_save_point']);
         add_filter('acf/settings/load_json', [$this, 'my_acf_json_load_point']);
-        add_filter('dp_json_dir_location', [$this, 'dp_json_dir_location']);
-        define('IS_DEV', true);
+        // add_filter('dp_json_dir_location', [$this, 'dp_json_dir_location']);
+        // define('IS_DEV', true);
     }
 
     public function enqueue_scripts() 
