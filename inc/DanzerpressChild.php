@@ -11,6 +11,49 @@ class DanzerpressChild {
         add_filter('acf/settings/load_json', [$this, 'my_acf_json_load_point']);
         // add_filter('dp_json_dir_location', [$this, 'dp_json_dir_location']);
         // define('IS_DEV', true);
+        $this->add_fields();
+
+        add_filter('danzerpress_context', [$this, 'danzerpress_context']);
+    }
+
+    public function danzerpress_context($context)
+    {
+        $child_context = [
+            'child' => [
+                'acf' => get_fields('options')
+            ]
+        ];
+        return array_merge($context, $child_context);
+    }
+
+    public function add_fields() 
+    {
+        acf_add_local_field(array(
+            'key' => 'danzerpress_certifications',
+            'label' => 'Header Certifications',
+            'name' => 'header_certifications',
+            'type' => 'textarea',
+            'parent' => 'group_5c772e5da7c0e',
+            'placeholder' => 'Header Certs'
+        ));
+
+        acf_add_local_field(array(
+            'key' => 'certifications_font_size',
+            'label' => 'Font Size',
+            'name' => 'certifications_font_size',
+            'type' => 'number',
+            'parent' => 'group_5c772e5da7c0e',
+            'placeholder' => 'Enter number of pixels that font should be'
+        ));
+
+        acf_add_local_field(array(
+            'key' => 'danzerpress_header_phone',
+            'label' => 'Header Phone',
+            'name' => 'header_phone',
+            'type' => 'text',
+            'parent' => 'group_5c772e5da7c0e',
+            'placeholder' => 'Phone Number'
+        ));
     }
 
     public function enqueue_scripts() 
