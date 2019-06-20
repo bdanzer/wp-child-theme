@@ -59,7 +59,7 @@ class DanzerpressChild {
     public function enqueue_scripts() 
     {
         // enqueue parent styles
-        wp_enqueue_style('parent-theme', Assets\asset_path('styles/main.css'), false, \Danzerpress\DP_Theme::get_ver());
+        wp_enqueue_style('parent-theme', get_template_directory_uri() . '/dist/styles/main.css', false, \Danzerpress\DP_Theme::get_ver());
 
         // enqueue child styles
         wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/dist/style.min.css', ['parent-theme'], self::get_ver());
