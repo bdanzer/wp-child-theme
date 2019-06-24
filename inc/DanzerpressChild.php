@@ -63,6 +63,8 @@ class DanzerpressChild {
 
         // enqueue child styles
         wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/dist/style.min.css', ['parent-theme'], self::get_ver());
+
+        wp_enqueue_style('plain-css', get_stylesheet_directory_uri() . '/style.css', ['parent-theme'], self::get_ver());
     
         //child theme js
         wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/dist/main.min.js', array(), self::get_ver(), true);
